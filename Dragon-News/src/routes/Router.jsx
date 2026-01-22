@@ -6,6 +6,8 @@ import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import ForgetPassword from "../pages/ForgetPassword";
+import NewsDetailsLayout from "../layouts/NewsDetailsLayout";
+import NewsDetails from "../pages/NewsDetails";
 
 export const router = createBrowserRouter([
   {
@@ -27,23 +29,30 @@ export const router = createBrowserRouter([
     path: "auth",
     element: <AuthLayout></AuthLayout>,
     children: [
-        {
-            path : "/auth/login",
-            element: <Login></Login>
-        },
-        {
-            path : "/auth/register",
-            element: <Registration></Registration>
-        },
-        {
-            path : "/auth/forget-password",
-            element: <ForgetPassword></ForgetPassword>
-        },
-    ]
+      {
+        index: true,
+        element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <Registration></Registration>,
+      },
+      {
+        path: "/auth/forget-password",
+        element: <ForgetPassword></ForgetPassword>,
+      },
+    ],
   },
   {
     path: "news",
-    element: <h1>News Layout</h1>,
+    element: <NewsDetailsLayout></NewsDetailsLayout>,
+    children: [
+      {
+        path: ":id",
+        loader: ()=>(fetch('/news.json')),
+        element: <NewsDetails></NewsDetails>
+      },
+    ],
   },
   {
     path: "/*",

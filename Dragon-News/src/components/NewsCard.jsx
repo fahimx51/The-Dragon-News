@@ -1,6 +1,7 @@
 import React from "react";
 import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaEye, FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   return (
@@ -30,20 +31,21 @@ const NewsCard = ({ news }) => {
       </div>
 
       <div className="mx-10">
-        <h1 className="text-3xl font-semibold text-base-400 mb-10">
+        <h1 className="text-3xl font-semibold text-primary mb-10">
           {news.title}
         </h1>
         <img
-          className="w-full max-h-90 mb-10 rounded-lg"
+          className="w-full max-h-90 object-cover object-center mb-10 rounded-lg"
           src={news.image_url}
           alt=""
         />
         <section className="mb-10">
           <p className="text-primary text-lg inline">
-            {news.details.slice(0, 300)} . . . 
+            {news.details.slice(0, 200)} . . .
           </p>
+
           <p className="btn border-0 p-0 bg-transparent text-secondary text-lg mb-5 inline ml-2">
-            Read More
+            <Link to={`/news/${news.id}`}> Read More</Link>
           </p>
         </section>
 

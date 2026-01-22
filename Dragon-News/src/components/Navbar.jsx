@@ -21,7 +21,7 @@ const Navbar = () => {
       {!user && (
         <div className="login-btn flex gap-3 items-center">
           <img src={userIcon} alt="user icon" />
-          <Link to="/auth/login">
+          <Link to="/auth">
             <button className="btn btn-primary w-35">Login</button>
           </Link>
         </div>
@@ -34,7 +34,7 @@ const Navbar = () => {
             src={user.photoURL}
             alt="user icon"
           />
-          <Link to="/auth/login">
+          <Link to="/">
             <button onClick={handleLogout} className="btn btn-primary w-35">
               Logout
             </button>
