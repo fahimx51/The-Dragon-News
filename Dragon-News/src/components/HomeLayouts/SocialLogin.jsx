@@ -1,12 +1,28 @@
-import React from "react";
+import React, { use } from "react";
+import { AuthContext } from "../../provider/AuthContext";
 
 const SocialLogin = () => {
+  const { signInWithGoogle } = use(AuthContext);
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then(() => {
+        console.log("Successfully sign in using google");
+      })
+      .catch(() => {
+        console.log("Fail to sign in using google");
+      });
+  };
+
   return (
     <div>
       <h1 className="font-semibold  text-primary text-2xl mb-5">Login With</h1>
 
       <div className="mb-1">
-        <button className="btn bg-white text-black border-[#e5e5e5] w-full">
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn bg-white text-black border-[#e5e5e5] w-full"
+        >
           <svg
             aria-label="Google logo"
             width="16"
