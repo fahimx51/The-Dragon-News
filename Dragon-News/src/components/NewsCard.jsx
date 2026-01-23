@@ -1,7 +1,7 @@
-import React from "react";
+import React, {  } from "react";
 import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaEye, FaStar } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link,  } from "react-router";
 
 const NewsCard = ({ news }) => {
   return (
