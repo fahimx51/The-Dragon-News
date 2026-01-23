@@ -1,8 +1,12 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 
+
 const Login = () => {
+  useEffect(()=>{
+      document.title = 'DragonNews | Login'
+    } ,[])
   const { signInWithEmailPass } = use(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();

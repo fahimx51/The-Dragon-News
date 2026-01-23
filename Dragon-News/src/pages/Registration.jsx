@@ -1,9 +1,13 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthContext";
 import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
+  useEffect(()=>{
+        document.title = 'DragonNews | Register'
+      } ,[])
+
   const { registerWithEmailPass } = use(AuthContext);
 
   const handleRegister = (e) => {
@@ -89,7 +93,7 @@ const Registration = () => {
 
         <p className="font-semibold text-accent">
           Already Have an Account?{" "}
-          <Link className="text-secondary" to="/auth/login">
+          <Link className="text-secondary" to="/auth">
             Login
           </Link>
         </p>

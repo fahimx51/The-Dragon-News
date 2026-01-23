@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router";
 import NewsCard from "../components/NewsCard";
 
 const CategoryNews = () => {
   const newsData = useLoaderData();
   const { id } = useParams();
+
+  useEffect(()=>{
+    document.title = 'DragonNews | Home'
+  } ,[])
 
 
     let categoryNews = [];

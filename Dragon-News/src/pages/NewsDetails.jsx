@@ -10,6 +10,7 @@ const NewsDetails = () => {
 
   useEffect(() => {
     window.scrollTo(0, 200);
+    document.title = 'DragonNews | News'
   }, [id]);
 
   return (
