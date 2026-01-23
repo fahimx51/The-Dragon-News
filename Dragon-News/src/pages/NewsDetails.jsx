@@ -14,7 +14,16 @@ const NewsDetails = () => {
 
   return (
     <div className="border-1 border-base-200 rounded-md p-5 m-10 shadow-sm">
-      <img className="w-full rounded-md mb-5" src={newsData.image_url} alt="" />
+      <img
+        onError={(e) => {
+          e.target.src =
+            "https://images.pexels.com/photos/7412640/pexels-photo-7412640.jpeg";
+          e.target.className = "w-full rounded-md mb-5";
+        }}
+        className="w-full rounded-md mb-5"
+        src={newsData.image_url}
+        alt=""
+      />
       <h1 className="text-3xl font-semibold text-primary mb-5">
         {newsData.title}
       </h1>

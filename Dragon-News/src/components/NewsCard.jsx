@@ -1,7 +1,7 @@
-import React, {  } from "react";
+import React from "react";
 import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaEye, FaStar } from "react-icons/fa";
-import { Link,  } from "react-router";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   return (
@@ -10,6 +10,11 @@ const NewsCard = ({ news }) => {
         <div className="flex gap-5 items-center ml-10">
           <div>
             <img
+              onError={(e) => {
+                e.target.src =
+                  "https://images.pexels.com/photos/7412640/pexels-photo-7412640.jpeg";
+                e.target.className = "h-15 w-15 rounded-full";
+              }}
               className="h-15 w-15 rounded-full"
               src={news.author.img}
               alt=""
