@@ -2,7 +2,7 @@
 
 A high-performance, responsive news portal built with the **MERN** stack (React focus) and **Firebase Authentication**. This project demonstrates advanced routing, secure user handling, and real-time UI updates.
 
-🚀 **Live Link:** [goat-developer-2.surge.sh](https://the-dragon-news-ed711.web.app/)
+🚀 **Live Link:** [Click Here](https://the-dragon-news-ed711.web.app/)
 
 ## 🛠️ Tech Stack
 
